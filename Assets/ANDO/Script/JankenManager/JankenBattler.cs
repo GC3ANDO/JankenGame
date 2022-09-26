@@ -8,7 +8,7 @@ public class JankenBattler
     private string m_name = "";
 
     //現在出しているじゃんけんの手の種類
-    private JankenManager.E_JANKEN_KIND m_current_janken_hand;
+    protected JankenManager.E_JANKEN_KIND m_current_janken_hand;
 
 
     //名前セット
@@ -21,11 +21,8 @@ public class JankenBattler
 
 
     //ジャンケンの手をランダムに出す
-    public void SetJankenHand()
+    virtual public void SetJankenHand()
     {
-        int max = (int)JankenManager.E_JANKEN_KIND.E_MAX;
-        JankenManager.E_JANKEN_KIND janken_kind = (JankenManager.E_JANKEN_KIND)Random.Range(0, max);
-        m_current_janken_hand = janken_kind;
         DebugLogJankenHand(m_current_janken_hand);
     }
 
